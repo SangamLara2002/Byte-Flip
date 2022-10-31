@@ -1,0 +1,15 @@
+vector<int> searchRange(vector<int>& nums, int target) {
+       auto it= find(nums.begin(),nums.end(),target);
+        if (it != nums.end()){
+        int index=it-nums.begin();
+        int i;
+        for( i=index;i<nums.size()-1;++i){
+            if(nums[i]!=nums[i+1])
+                break;
+        }
+         return {index,i};   
+        }
+        else
+            return {-1,-1};
+        
+    }
